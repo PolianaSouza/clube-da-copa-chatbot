@@ -4,7 +4,8 @@ import horarioJogos
 import curiosidades
 import copasAnteriores
 import jogadores
-import conversa
+# import conversa
+#Está dando bug se executar com a conversa ativada
 
 def processar_resposta(retorno):
     if(retorno == '1'):
@@ -15,6 +16,7 @@ def processar_resposta(retorno):
     elif(retorno == '2'):
         print(f"{os.linesep}Você quer saber sobre as curiosidades da copa do mundo de 2022")
         curiosidades.curiosidades_copa22()
+        curiosidades.jogando_ultima_copa()
         tentar_novamente()
     elif(retorno == '3'):
         print(f"{os.linesep}Informações sobre todos os jogadores da copa de 2022")
