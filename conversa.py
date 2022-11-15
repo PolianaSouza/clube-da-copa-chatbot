@@ -21,14 +21,14 @@ trainer.train([
     "Não, jamais kkkkk, mas vai que né?"
 ])
 
-print("Bem vindo ao clube da copa 2022")
-print("Sou o Gabigol e vamos conversar muito!!!")
-while True:
-    try:
-        resposta = bot.get_response(input("Usuário: "))
-        if float(resposta.confidence) > 0.5:
-            print("Gabigol: ", resposta)
-        else:
-            print("Não entendi sua pergunta :(")
-    except(KeyboardInterrupt, EOFError, SystemExit):
-        break
+# print("Bem vindo ao clube da copa 2022")
+# print("Sou o Gabigol e vamos conversar muito!!!")
+# while True:
+#     try:
+#         resposta = bot.get_response(input("Usuário: "))
+#         if float(resposta.confidence) > 0.5:
+#             print("Gabigol: ", resposta)
+#         else:
+#             print("Não entendi sua pergunta :(")
+#     except(KeyboardInterrupt, EOFError, SystemExit):
+#         break

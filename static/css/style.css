@@ -1,0 +1,85 @@
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url('../assets/imagem.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.container {
+    margin-top: 25px;
+    height: 90%;
+}
+
+.card {
+    border: 2px solid #452c3b;
+}
+
+.card-header {
+    background-color: #082f84 !important;
+}
+
+.card-img {
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 90px;
+    max-width: 100%;
+    margin-right: 15px;
+}
+
+.card-header > h1 {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: bold;
+}
+
+.card-body {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: auto;
+}
+
+#cardChatbox {
+    width: 80%;
+    
+}
+
+.containerInput {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputText {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    border: 1px solid rgba(11, 105, 43, 50%);
+
+}
+.btn {
+    margin-left: 10px;
+    justify-items: center;
+}
+
+.textoChatbox,
+.textoUsuario {
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.textoUsuario{
+    background-color: rgba(92, 192, 90, 34%);
+    
+}
+
+.textoChatbox{
+    background-color: rgba(246, 237, 18, 51%);
+}

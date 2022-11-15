@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center">
+      <!-- Crio o card do chatbot -->
+      <div class="card" style="max-width: 90%">
+        <div
+          class="card-header d-flex justify-content-center align-items-center"
+        >
+          <div class="card-img">
+              <img
+                src="../static/assets/robo.webp"
+                alt="robo chat"
+                style="width: 90px"
+              />
+          </div>
+          <h1>Olá Sou o Bot da Copa</h1>
+        </div>
+        <div class="card-body">
+            <div id="cardChatbox"></div>
+          <!-- <div class="textoUsuario">
+            mensagem Usuário mensagem Usuário mensagem Usuário mensagem Usuário
+            mensagem Usuário mensagem Usuário
+          </div>
+          <div class="textoChatbox">
+            mensagem Chatbox mensagem Chatbox mensagem Chatbox mensagem Chatbox
+            mensagem Chatbox mensagem Chatbox
+          </div> -->
+          <div id="userInput" class="containerInput">
+            <input
+              class="inputText"
+              type="text"
+              id="cardInput"
+              name="msg"
+              placeholder="Digite sua mensagem"
+            />
+            <button type="submit" class="btn btn-success">
+              <img
+                src="../static/assets/Vectoricon.png"
+                alt="enviar"
+                width="25px"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim do card -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function getBotResponse(){
+            var textoEntrada = $("#cardInput").val();
+            var userHtml = '<p class="textoUsuario"><span>' + textoEntrada + '</span></p>';
+            $("#cardInput").val("");
+            $("#cardChatbox").append(userHtml);
+            document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth"});
+            $.get("/get", { msg: textoEntrada}).done(function(data) {
+                var botHtml = '<p class="textoChatbox"><span>' + data + '</span></p>';
+                $("#cardChatbox").append(botHtml);
+                document
+                    .getElementById("userInput")
+                    .scrollIntoView({ block: "start", behavior: "smooth"});
+            });
+        }
+        $("#cardInput").keypress(function(e) {
+            if(e.which == 13) {
+                getBotResponse();
+            }
+        })
+    </script>
+  </body>
+</html>
