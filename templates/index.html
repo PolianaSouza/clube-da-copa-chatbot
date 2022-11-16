@@ -32,14 +32,6 @@
         </div>
         <div class="card-body">
             <div id="cardChatbox"></div>
-          <!-- <div class="textoUsuario">
-            mensagem Usuário mensagem Usuário mensagem Usuário mensagem Usuário
-            mensagem Usuário mensagem Usuário
-          </div>
-          <div class="textoChatbox">
-            mensagem Chatbox mensagem Chatbox mensagem Chatbox mensagem Chatbox
-            mensagem Chatbox mensagem Chatbox
-          </div> -->
           <div id="userInput" class="containerInput">
             <input
               class="inputText"
@@ -68,14 +60,14 @@
     <script>
         function getBotResponse(){
             var textoEntrada = $("#cardInput").val();
-            var userHtml = '<p class="textoUsuario"><span>' + textoEntrada + '</span></p>';
+            var userHtml = '<div class="imgRespostaUser"><p class="textoUsuario"><span>' + textoEntrada + '</span></p> <img src="../static/assets/person.png" id="imgRes" alt="robo chat"/> </div>';
             $("#cardInput").val("");
             $("#cardChatbox").append(userHtml);
             document
                 .getElementById("userInput")
-                .scrollIntoView({ block: "start", behavior: "smooth"});
+                /*.scrollIntoView({ block: "start", behavior: "smooth"}); ver o que faz*/
             $.get("/get", { msg: textoEntrada}).done(function(data) {
-                var botHtml = '<p class="textoChatbox"><span>' + data + '</span></p>';
+                var botHtml = '<div class="imgRespostaBot"><img src="../static/assets/robo.webp" alt="robo chat" id="imgRobo"/><p class="textoChatbox"><span>' + data + '</span></p></div> ';
                 $("#cardChatbox").append(botHtml);
                 document
                     .getElementById("userInput")

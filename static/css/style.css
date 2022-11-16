@@ -1,14 +1,16 @@
 body {
-    height: 100vh;
+    height: 96vh;
     width: 100%;
     background-image: url('../assets/imagem.jpg');
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover;
 }
 .container {
     margin-top: 25px;
     height: 90%;
+    width: 100%;
+    max-width: 500px;
 }
 
 .card {
@@ -43,8 +45,7 @@ body {
 }
 
 #cardChatbox {
-    width: 80%;
-    
+    width: 90%;   
 }
 
 .containerInput {
@@ -61,11 +62,10 @@ body {
     border-radius: 8px;
     font-size: 1.2em;
     border: 1px solid rgba(11, 105, 43, 50%);
-
 }
+
 .btn {
-    margin-left: 10px;
-    justify-items: center;
+    margin-left: 10px; 
 }
 
 .textoChatbox,
@@ -75,11 +75,34 @@ body {
     border-radius: 10px;
 }
 
-.textoUsuario{
-    background-color: rgba(92, 192, 90, 34%);
-    
-}
-
 .textoChatbox{
     background-color: rgba(246, 237, 18, 51%);
+}
+
+.imgRespostaBot,
+.imgRespostaUser {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.textoUsuario{
+    background-color: rgba(92, 192, 90, 34%);
+    width: 100%;
+    max-width: 300px;
+}
+
+#imgRes {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px; 
+}
+
+#imgRobo {
+    width: 80px;
+    height: 60px;
+    margin: 0 5px; 
 }
