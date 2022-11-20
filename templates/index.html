@@ -22,25 +22,41 @@
           class="card-header d-flex justify-content-center align-items-center"
         >
           <div class="card-img">
-              <img
-                src="../static/assets/robo.webp"
+            <img
+              src="../static/assets/robo.webp"
+              alt="robo chat"
+              style="width: 60px"
+            />
+            <!-- <img
+                src="../static/assets/horario.png"
                 alt="robo chat"
-                style="width: 90px"
-              />
+                style="width: 60px"
+              /> -->
           </div>
-          <h1>Olá Sou o Bot da Copa</h1>
+          <h1>Olá sou o Galvão</h1>
         </div>
         <div class="card-body">
-            <div id="cardChatbox"></div>
+          <div class="apresentacao ">
+            <p >{{msgs}}</p>
+            <p >{{dica}}</p>
+            <strong>
+            <ul>
+              <li> {{clube[0]}} </li>
+              <li> {{clube[1]}} </li>
+              <li> {{clube[2]}} </li>
+            </ul>
+          </strong>
+          </div>
+          <div id="cardChatbox"></div>
           <div id="userInput" class="containerInput">
             <input
               class="inputText"
               type="text"
               id="cardInput"
               name="msg"
-              placeholder="Digite sua mensagem"
+              placeholder='Diga "Olá" para iniciar a conversa'
             />
-            <button type="submit" class="btn btn-success">
+            <button type="submit" class="btn btn-success" id="enviar">
               <img
                 src="../static/assets/Vectoricon.png"
                 alt="enviar"
@@ -58,27 +74,32 @@
       crossorigin="anonymous"
     ></script>
     <script>
-        function getBotResponse(){
-            var textoEntrada = $("#cardInput").val();
-            var userHtml = '<div class="imgRespostaUser"><p class="textoUsuario"><span>' + textoEntrada + '</span></p> <img src="../static/assets/person.png" id="imgRes" alt="robo chat"/> </div>';
-            $("#cardInput").val("");
-            $("#cardChatbox").append(userHtml);
-            document
-                .getElementById("userInput")
-                /*.scrollIntoView({ block: "start", behavior: "smooth"}); ver o que faz*/
-            $.get("/get", { msg: textoEntrada}).done(function(data) {
-                var botHtml = '<div class="imgRespostaBot"><img src="../static/assets/robo.webp" alt="robo chat" id="imgRobo"/><p class="textoChatbox"><span>' + data + '</span></p></div> ';
-                $("#cardChatbox").append(botHtml);
-                document
-                    .getElementById("userInput")
-                    .scrollIntoView({ block: "start", behavior: "smooth"});
-            });
+      function getBotResponse() {
+        var textoEntrada = $("#cardInput").val();
+        var userHtml =
+          '<div class="imgRespostaUser"><p class="textoUsuario"><span>' +
+          textoEntrada +
+          '</span></p> <img src="../static/assets/person.png" id="imgRes" alt="robo chat"/> </div>';
+        $("#cardInput").val("");
+        $("#cardChatbox").append(userHtml);
+        document.getElementById("userInput");
+        /*.scrollIntoView({ block: "start", behavior: "smooth"}); ver o que faz*/
+        $.get("/get", { msg: textoEntrada }).done(function (data) {
+          var botHtml =
+            '<div class="imgRespostaBot"><img src="../static/assets/robo.webp" alt="robo chat" id="imgRobo"/><p class="textoChatbox"><span>' +
+            data +
+            "</span></p></div> ";
+          $("#cardChatbox").append(botHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+        });
+      }
+      $("#cardInput").keypress(function (e) {
+        if (e.which == 13) {
+          getBotResponse();
         }
-        $("#cardInput").keypress(function(e) {
-            if(e.which == 13) {
-                getBotResponse();
-            }
-        })
+      });
     </script>
   </body>
 </html>

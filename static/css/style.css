@@ -14,7 +14,8 @@ body {
 }
 
 .card {
-    border: 2px solid #452c3b;
+    border: 2px solid #6C183A;
+    background-color: rgba(108, 24, 58, 0.27);
 }
 
 .card-header {
@@ -23,8 +24,8 @@ body {
 
 .card-img {
     border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    width: 90px;
+    background-color: #009438;
+    width: 60px;
     max-width: 100%;
     margin-right: 15px;
 }
@@ -42,10 +43,20 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     overflow: auto;
+    background-color: rgba(255, 255, 255, 0.769);
 }
 
 #cardChatbox {
     width: 90%;   
+}
+
+.apresentacao {
+    font-size: 1.2em;
+    background-color: #7ccdf05a;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
 .containerInput {
@@ -61,7 +72,7 @@ body {
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.2em;
-    border: 1px solid rgba(11, 105, 43, 50%);
+    border: 1px solid rgba(6, 106, 39, 0.466);
 }
 
 .btn {
@@ -76,10 +87,11 @@ body {
 }
 
 .textoChatbox{
-    background-color: rgba(246, 237, 18, 51%);
+    background-color: rgba(246, 238, 18, 0.899);
+    width: 100%;
+    max-width: 280px;
 }
 
-.imgRespostaBot,
 .imgRespostaUser {
     width: 100%;
     max-width: 450px;
@@ -89,8 +101,19 @@ body {
     justify-content: space-around;
 }
 
+.imgRespostaBot{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    margin-left: -40px; 
+}
+
 .textoUsuario{
-    background-color: rgba(92, 192, 90, 34%);
+    background-color: #009438;
+    color: #FFF;
     width: 100%;
     max-width: 300px;
 }
@@ -104,5 +127,5 @@ body {
 #imgRobo {
     width: 80px;
     height: 60px;
-    margin: 0 5px; 
+    margin: 0 5px;
 }
