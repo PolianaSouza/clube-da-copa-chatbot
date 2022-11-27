@@ -1,0 +1,22 @@
+############ < MELHORIAS > ##################
+
+"olá", "Sobre o que vamos conversar hoje?"
+"horários dos jogos", "do Brasil ou de todos?",
+"do brasil", "imagem com horários dos jogos",
+"de todos", "imagem com horários dos jogos" "gostaria de saber algo mais?",
+"Sim", "coisas que eu sei: curiosidades, Horários dos jogos, como está o placar?" "Digite a palavra referente ao assunto"
+"curiosidades", "Você quer saber curiosidades sobre a copa ou sobre os jogadores?"
+"sobre os jogadores", "sabia que :curiosidades sobre o jogador x""gostaria de saber algo mais?",
+"sobre a copa", "Sabia que a copa de 1950 aconteceu no Brasil e o ganhador foi X""gostaria de saber algo mais?"
+"como está o placar?", "Atualmente o time X está com 3 pontos...."
+
+o que vou precisar?
+* Arquivo de conversa.py OK
+* Imagens de horários dos jogos, com até 250px e link para acesso - Falta
+* Arquivo curiosidadesJogadores.py separados por tema. EM ANDAMENTO
+    Ex: neymar_curiosidades = ("conteudo.....")
+* Arquivo placar.py contendo todos os placares atuais dos jogos
+* Arquivo curiosidadesCopa.py separados por tema. 
+    Ex: copa_atual = ("conteudo....")
+
+

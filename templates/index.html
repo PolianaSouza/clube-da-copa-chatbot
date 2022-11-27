@@ -27,11 +27,6 @@
               alt="robo chat"
               style="width: 60px"
             />
-            <!-- <img
-                src="../static/assets/horario.png"
-                alt="robo chat"
-                style="width: 60px"
-              /> -->
           </div>
           <h1>Olá sou o Galvão</h1>
         </div>
@@ -86,9 +81,9 @@
         /*.scrollIntoView({ block: "start", behavior: "smooth"}); ver o que faz*/
         $.get("/get", { msg: textoEntrada }).done(function (data) {
           var botHtml =
-            '<div class="imgRespostaBot"><img src="../static/assets/robo.webp" alt="robo chat" id="imgRobo"/><p class="textoChatbox"><span>' +
+            '<div class="imgRespostaBot"><img src="../static/assets/robo.webp" alt="robo chat" id="imgRobo"/><div class="textoChatbox"><span>' +
             data +
-            "</span></p></div> ";
+            "</span></div></div> ";
           $("#cardChatbox").append(botHtml);
           document
             .getElementById("userInput")

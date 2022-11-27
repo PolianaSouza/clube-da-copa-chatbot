@@ -1,7 +1,7 @@
 # Essa será a primeira página
 import os
 import horarioJogos
-import curiosidades
+import curiosidadesCopa
 import copasAnteriores
 import jogadores
 
@@ -20,6 +20,7 @@ clube = ["Horários dos jogos", "Curiosidades sobre a copa do mundo", "informaç
 
 @app.route("/")
 def inicio():
+    
     return render_template('index.html', msgs=mensagem, dica=dica, clube=clube)
 
 # @app.route("/conversa")
@@ -28,15 +29,15 @@ def inicio():
 
 @app.route("/get")
 def get_bot_response():
-    conversa.bot.get_latest_response('Bem vindo') 
+    str(conversa.bot.get_response('Bem vindo') )
     userText = request.args.get('msg')
     while True:
         try:
             resposta = conversa.bot.get_response(userText)
-            if float(resposta.confidence) > 0.5:
+            if float(resposta.confidence) > 0.2:
                 return str(conversa.bot.get_response(userText))
             else:
-                return str("Não entendi sua pergunta :(")
+                return str(f"<p>Ainda não tenho resposta para sua pergunta :(</p> <p> {conversa.bot_vida} </p>")
                 # print("Não entendi sua pergunta :(")
         except(KeyboardInterrupt, EOFError, SystemExit):
             break
