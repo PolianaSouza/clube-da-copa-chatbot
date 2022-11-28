@@ -11,10 +11,11 @@ body {
     height: 90%;
     width: 100%;
     max-width: 500px;
+
 }
 
 .card {
-    border: 2px solid #6C183A;
+    border: 2px solid #139b0e7f;
     background-color: rgba(108, 24, 58, 0.27);
 }
 
@@ -44,6 +45,7 @@ body {
     align-items: flex-end;
     overflow: auto;
     background-color: rgba(255, 255, 255, 0.769);
+    border-radius: 0 0 2px 2px;
 }
 
 #cardChatbox {
