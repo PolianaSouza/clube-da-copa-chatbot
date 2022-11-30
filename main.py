@@ -31,8 +31,8 @@ def get_bot_response():
         except(KeyboardInterrupt, EOFError, SystemExit):
             break
 
-if __name__ == "_main_":
-    app.run
+# if __name__ == "_main_":
+#     app.run
 
 
 
